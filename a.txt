@@ -1,1 +1,1 @@
-If u have many file you can add all by git add.
+If u have many file you can add all by command git add.
