@@ -9,6 +9,8 @@ public class StudentList {
         students = new ArrayList<>();
     }
 
+
+
     public void addNewStudent(String id, String name) {
         id = id.trim();
         name = name.trim();
@@ -16,6 +18,17 @@ public class StudentList {
             Student exist = findStudentById(id);
             if (exist == null) {
                 students.add(new Student(id.trim(), name.trim()));
+            }
+        }
+    }
+
+    public void addNewStudent(String id, String name, double score) {
+        id = id.trim();
+        name = name.trim();
+        if (!id.equals("") && !name.equals("")) {
+            Student exist = findStudentById(id);
+            if (exist == null) {
+                students.add(new Student(id, name, score));
             }
         }
     }
@@ -47,4 +60,7 @@ public class StudentList {
     public ArrayList<Student> getStudents() {
         return students;
     }
+
+
+
 }

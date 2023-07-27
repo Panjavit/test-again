@@ -8,8 +8,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import ku.cs.models.Student;
 import ku.cs.models.StudentList;
+import ku.cs.services.Datasource;
 import ku.cs.services.FXRouter;
-import ku.cs.services.StudentHardCodeDatasource;
+import ku.cs.services.StudentListFileDatasource;
+import ku.cs.services.StudentListHardCodeDatasource;
 
 import java.io.IOException;
 
@@ -22,6 +24,7 @@ public class StudentListController {
     @FXML private Label errorLabel;
     @FXML private TextField giveScoreTextField;
 
+    private Datasource<StudentList> datasource;
     private StudentList studentList;
     private Student selectedStudent;
 
@@ -29,7 +32,7 @@ public class StudentListController {
     public void initialize() {
         errorLabel.setText("");
         clearStudentInfo();
-        StudentHardCodeDatasource datasource = new StudentHardCodeDatasource();
+        datasource = new StudentListFileDatasource("data", "student-list.csv");
         studentList = datasource.readData();
         showList(studentList);
         studentListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Student>() {
@@ -81,6 +84,9 @@ public class StudentListController {
                 double score = Double.parseDouble(scoreText);
                 studentList.giveScoreToId(selectedStudent.getId(), score);
                 showStudentInfo(selectedStudent);
+
+                // เขียนข้อมูลลงในไฟล์เมื่อมีการเปลี่ยนแปลงของข้อมูล
+                datasource.writeData(studentList);
             } catch (NumberFormatException e) {
                 errorMessage = "Please insert number value";
                 errorLabel.setText(errorMessage);

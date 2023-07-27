@@ -5,6 +5,12 @@ public class Student {
     private String name;
     private double score;
 
+    public Student(String id, String name, double score) {
+        this.id = id;
+        this.name = name;
+        this.score = score;
+    }
+
     public Student(String id, String name) {
         this.id = id;
         this.name = name;
@@ -29,7 +35,7 @@ public class Student {
     }
 
     public boolean isId(String id) {
-        return this.id.equals(id);
+        return this.id.equals(id); //string เทียบกันด้วย equals
     }
 
     public String getId() {
