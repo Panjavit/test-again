@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.controllers.StudentsTableController">
+   <children>
+      <TableView fx:id="studentsTableView" layoutX="80.0" layoutY="111.0" prefHeight="365.0" prefWidth="642.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="80.0" layoutY="49.0" text="Student List" textFill="#0037ff">
+         <font>
+            <Font name="Latha Bold" size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

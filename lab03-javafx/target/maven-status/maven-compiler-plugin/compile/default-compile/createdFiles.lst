@@ -6,8 +6,10 @@ ku\cs\services\FXRouter.class
 ku\cs\lab03javafx\HelloApplication.class
 ku\cs\services\FXRouter$RouteScene.class
 ku\cs\controllers\StudentListController$1.class
+ku\cs\controllers\StudentsTableController$1.class
 ku\cs\Main.class
 module-info.class
+ku\cs\controllers\StudentScoreController.class
 ku\cs\services\Datasource.class
 ku\cs\models\StudentList.class
 ku\cs\services\StudentListFileDatasource.class

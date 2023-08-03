@@ -7,4 +7,6 @@ module ku.cs {
     exports ku.cs.controllers;
     exports ku.cs.lab03javafx;
     opens ku.cs.lab03javafx to javafx.fxml;
+    exports ku.cs.models;
+    opens ku.cs.models to javafx.base;
 }
